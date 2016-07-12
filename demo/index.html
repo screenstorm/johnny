@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Johnny2 DEMO</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Colorpicker -->
+    <link href="css/bootstrap-colorpicker.min.css" rel="stylesheet">
+  </head>
+
+  <body role="document">
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Johnny2 DEMO</h1>
+        <p>This page is a test en demo page for the Particle Photon based "Johnny 2" IoT device.</p>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-md-12" id="message_div">
+          <div class="alert alert-danger" role="alert" id="message"></div>
+        </div>  
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Request</h3>
+            </div>
+            <div class="panel-body">
+              <form role="form" action="https://api.particle.io/v1/devices/johnny-mk1/whisper" id="customForm" method="POST">
+                <div class="form-group">
+                  <label for="line1">LCD line 1</label>
+                  <input type="text" class="form-control" id="line1" name="line1" value="hello">
+                </div>
+                <div class="form-group">
+                  <label for="line2">LCD line 2</label>
+                  <input type="text" class="form-control" id="line2" name="line2" value="world">
+                </div>
+                <div class="form-group">
+                  <label for="ledMode">Led mode</label>
+                    <select class="form-control" id="ledMode" name="ledMode">
+                      <option value="still" selected>Still</option>
+                      <option value="kit">Kit</option>
+                      <option value="fade">Fade</option>
+                      <option value="nervous">Nervous</option>
+                      <option value="disco">Disco</option>
+                      <option value="strobe">Strobe</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ledColor">Led color</label>
+                    <div id="cp3" class="input-group colorpicker-component">
+                      <input type="text" name="ledColor" id="ledcolor" value="#00AABB" class="form-control" />
+                      <span class="input-group-addon"><i></i></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-success">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div><!-- /.col-md-6 -->
+        <div class="col-md-6">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Response</h3>
+            </div>
+            <div class="panel-body" id="result">
+                
+            </div>
+          </div>
+        </div><!-- /.col-md-6 -->  
+      </div>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <!-- colorpicker -->
+    <script src="js/bootstrap-colorpicker.js"></script>
+    
+    <!-- johnny2 logic -->
+    <script src="js/johnny2.js?1"></script>
+  </body>
+</html>
+
